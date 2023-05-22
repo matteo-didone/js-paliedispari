@@ -2,13 +2,13 @@
 // Then, we generate a random number (between 1 and 5) for the computer (using a function).
 // We add two numbers, and we check if the sum of the two numbers is an even or odd number (using a function)
 // Eventually, we declare the winner.
-
+const userNumber = parseInt(prompt("Choose a number between 1 and 5"));
 // 1. The user chooses a random number between 1 and 5
 // We need to check if the userNumber is a number between 1 and 5
 // If the userNumber is not a number between 1 and 5, we ask the user to choose a number between 1 and 5
 while (userNumber < 1 || userNumber > 5 || isNaN(userNumber))
 {
-    const userNumber = parseInt(prompt("Choose a number between 1 and 5"));
+    userNumber = parseInt(prompt("Choose a number between 1 and 5"));
 }
 
 //Generate a random number (between 1 and 5) for the computer (using a function).
