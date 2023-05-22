@@ -28,6 +28,7 @@ console.log("The computer number is: " + computerNumber);
 
 // 3. We add two numbers
 const summedNumbers = userNumber + computerNumber;
+console.log("The sum of the two numbers is: " + summedNumbers);
 
 // 4. We add two numbers, and we check if the sum of the two numbers is an even or odd number (using a function)
 function isEven(number) 
