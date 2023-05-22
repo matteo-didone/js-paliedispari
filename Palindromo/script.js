@@ -52,3 +52,4 @@ let result = isPalindrome(originalWordArray, reversedWordArray);
 console.log(result);
 //Print the result to the HTML page
 document.getElementById("result-palindrome").innerHTML = result ? "The string is palindrome" : "The string is not palindrome";
+
