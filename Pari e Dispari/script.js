@@ -1,55 +1,25 @@
-//Ask the user to enter a word 
-let word = prompt("Enter a word: ");
+// The user chooses a random number between 1 and 5
+// Then, we generate a random number (between 1 and 5) for the computer (using a function).
+// We add two numbers, and we check if the sum of the two numbers is an even or odd number (using a function)
+// Eventually, we declare the winner.
 
-//Create an array that's going to contain the word entered by the user, character by character
-let originalWordArray = [];
-let reversedWordArray = [];
-
-//Check if the word entered is valid 
-if(word == null || word == "" || word == " ")  //Check if the word is null, empty or a space
+// 1. The user chooses a random number between 1 and 5
+while (userNumber < 1 || userNumber > 5 || isNaN(userNumber))
 {
-    alert("Please insert a valid word"); //Alert the user if the word is not valid
-    location.reload(); //Reload the page if the user doesn't insert a word
+    const userNumber = parseInt(prompt("Choose a number between 1 and 5"));
 }
 
-//Now, I'm going to use a for loop to add a character to the array for each character in the word entered by the user
-for(let i = 0; i < word.length; i++)
+// We need to check if the userNumber is a number between 1 and 5
+// If the userNumber is not a number between 1 and 5, we ask the user to choose a number between 1 and 5
+
+//Generate a random number (between 1 and 5) for the computer (using a function).
+function generateRandomNumber()
 {
-    originalWordArray.push(word.charAt(i)); //Add a character to the array for each character in the word entered by the user
+    const randomNumber = Math.floor(Math.random() * 5) + 1;
+    return randomNumber;
 }
-
-//I'm going to use a for loop to add a character to the array for each character in the word entered by the user, but in reversed order
-for(let i = word.length - 1; i >= 0; i--) 
-{
-    reversedWordArray.push(word.charAt(i)); //Add a character to the array for each character in the word entered by the user, but in reversed order
-}
-
-//Create a function to check if the word entered is a palindrome or not
-function isPalindrome(array = [], reversedArray = [])
-{
-    array = originalWordArray; //Set the originalWordArray to the array parameter
-    reversedArray = reversedWordArray; //Set the reversedWordArray to the reversedArray parameter
-
-    //Check if the word entered is a palindrome or not
-    for(let i = 0; i < array.length; i++) 
-    {
-        if(array[i] === reversedArray[i]) //Check if the character in the originalWordArray is equal to the character in the reversedWordArray
-        {
-            console.log("The string is palindrome"); //Print to the console if the word entered is a palindrome
-            return true; //Return true if the character in the originalWordArray is equal to the character in the reversedWordArray
-        }
-        else if (array[i] !== reversedArray[i]) //Check if the character in the originalWordArray is not equal to the character in the reversedWordArray
-        {
-            console.log("The string is not palindrome"); //Print to the console if the word entered is not a palindrome
-            return false; //Return false if the character in the originalWordArray is not equal to the character in the reversedWordArray
-        }
-    }
-}
-
-//Call the function to check if the word entered is a palindrome or not
-let result = isPalindrome(originalWordArray, reversedWordArray);
-//Print the result to the console
-console.log(result);
-//Print the result to the HTML page
-document.getElementById("result-palindrome").innerHTML = result ? "The string is palindrome" : "The string is not palindrome";
+//Math.random() generates a random number between 0 (included) and 1 (not included)
+//Multiplying by 6, makes the range go from 0 (included) to 5 (not included)
+//Adding 1, makes the range go from 1 (included) to 6 (not included)
+//Math.floor() rounds the number down to the nearest whole number
 
