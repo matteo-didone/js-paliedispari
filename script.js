@@ -1,5 +1,5 @@
 //Ask the user to enter a word 
-let word = prompt("Enter a word");
+let word = prompt("Enter a word: ");
 
 //Create an array that's going to contain the word entered by the user, character by character
 let originalWordArray = [];
@@ -24,27 +24,25 @@ for(let i = word.length - 1; i >= 0; i--)
     reversedWordArray.push(word.charAt(i)); //Add a character to the array for each character in the word entered by the user, but in reversed order
 }
 
-//Now, I have 2 arrays, each containing the word entered by the user, character by character, but in opposite orders
-//I can go ahead, and compare each character in the 2 arrays, to see if the word entered by the user is a palindrome or not
-function isPalindrome(wordArray = [], wordArrayReversedOrder = [])
+//Create a function to check if the word entered is a palindrome or not
+function isPalindrome(array = [], reversedArray = [])
 {
-    wordArray = originalWordArray;
-    wordArrayReversedOrder = reversedWordArray;
+    array = originalWordArray; //Set the originalWordArray to the array parameter
+    reversedArray = reversedWordArray; //Set the reversedWordArray to the reversedArray parameter
 
-    //Check if the word entered is a palindrome
-    if(wordArray === wordArrayReversedOrder) 
+    //Check if the word entered is a palindrome or not
+    for(let i = 0; i < array.length; i++) 
     {
-        //If the word entered is a palindrome, then print it to the console
-        console.log("The word entered is a palindrome");
-        //Return true if the word entered is a palindrome
-        return true;
-    }
-    else
-    {
-        //If the word entered is not a palindrome, then print it to the console
-        console.log("The word entered is not a palindrome");
-        //Return false if the word entered is not a palindrome
-        return false;
+        if(array[i] === reversedArray[i]) //Check if the character in the originalWordArray is equal to the character in the reversedWordArray
+        {
+            console.log("The string is palindrome"); //Print to the console if the word entered is a palindrome
+            return true; //Return true if the character in the originalWordArray is equal to the character in the reversedWordArray
+        }
+        else
+        {
+            console.log("The string is not palindrome"); //Print to the console if the word entered is not a palindrome
+            return false; //Return false if the character in the originalWordArray is not equal to the character in the reversedWordArray
+        }
     }
 }
 
@@ -52,3 +50,5 @@ function isPalindrome(wordArray = [], wordArrayReversedOrder = [])
 let result = isPalindrome(originalWordArray, reversedWordArray);
 //Print the result to the console
 console.log(result);
+//Print the result to the HTML page
+document.getElementById("result-palindrome").innerHTML = result;
