@@ -51,3 +51,15 @@ else
     console.log("The sum of the two numbers is odd");
     document.getElementById("result-even-or-odd").innerHTML = "The sum of the two numbers is odd";
 }
+
+// 6. Eventually, we declare the winner.
+if (summedNumbers === userNumbers.toLowerCase()) 
+{
+    console.log("The user wins");
+    document.getElementById("result-winner").innerHTML = "The user wins";
+}
+else 
+{
+    console.log("The computer wins");
+    document.getElementById("result-winner").innerHTML = "The computer wins";
+}
